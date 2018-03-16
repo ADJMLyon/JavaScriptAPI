@@ -29,12 +29,12 @@ JavaScript est le langage le plus populaire au monde, comme le montre le graphiq
   </tr>
   <tr>
     <td align="center" bgcolor="EFEFEF">
-      Nombre de pull requests sur GitHub par langages en 2017
+      Nombre de <i>pull requests</i> sur GitHub par langages en 2017
     </td>
   </tr>
 </table>
 
-En effet, le nombre de pull requests concernés par des scripts JavaScript est largement devant les autres langages en 2017.
+En effet, le nombre de pull requests concernés par des scripts JavaScript est largement plus élévé que pour les autres langages en 2017.
 
 ### Exemples
 
