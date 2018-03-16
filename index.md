@@ -41,7 +41,9 @@ JavaScript est très populaire grâce au fait qu'il reste encore de nos jours le
 
 Ainsi, JavaScript est un langage complet, utilisé autant côté client (front-end, côté navigateur, avec des frameworks tels qu'[Angular](https://angular.io/) ou côté application mobile avec [Cordova](https://cordova.apache.org/)) que côté serveur comme nous l'avons mentionné plus haut.
 
-### Exemples
+### Hello World !
+
+Afin d'illustrer la notion d'API JavaScript, regardons l'exemple d'un "Hello World !" dans ce langage.
 
 ## Les navigateurs disponibles sur mobiles
 
