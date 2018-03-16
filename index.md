@@ -1,37 +1,18 @@
-## Tour d’horizon des APIs Javascript pour accéder au matériel depuis un navigateur sur dispositifs mobiles
+## Introduction
 
-You can use the [editor on GitHub](https://github.com/ADJMLyon/JavaScriptAPI/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+### Objectifs de la veille technologique
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+L'objectif de ce document est mettre en lumière les diverses APIs Javascript permettant d'accéder au matériel depuis un navigateur sur des dispositifs mobiles comme les smartphones ou tablettes, de prendre conscience de leur potentiel et de les illustrer par des exemples d'applications.
 
-### Markdown
+### Cadre de la veille technologique
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+## Présentation de JavaScript
 
-# Header 1
-## Header 2
-### Header 3
+### Un langage très populaire du fait de sa polyvalence
 
-- Bulleted
-- List
+### Exemples
 
-1. Numbered
-2. List
+## Les navigateurs disponibles sur mobiles
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ADJMLyon/JavaScriptAPI/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Les APIs Javascript pour accéder au matériel
