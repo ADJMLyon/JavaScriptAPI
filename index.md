@@ -19,7 +19,9 @@ JavaScript, créé en 1995 par Brendan Eich, est le "langage du Web". Il s'agit 
 
 ### Un langage très populaire du fait de sa polyvalence
 
-<table border="0">
+JavaScript est le langage le plus populaire au monde, comme le montre le graphique suivant :
+
+<table align="center" border="0">
   <tr>
     <td>
       <img src="img/popular-languages.jpg" style="width: 500px;">
@@ -31,6 +33,8 @@ JavaScript, créé en 1995 par Brendan Eich, est le "langage du Web". Il s'agit 
     </td>
   </tr>
 </table>
+
+En effet, le nombre de pull requests concernés par des scripts JavaScript est largement devant les autres langages en 2017.
 
 ### Exemples
 
