@@ -41,9 +41,48 @@ JavaScript est très populaire grâce au fait qu'il reste encore de nos jours le
 
 Ainsi, JavaScript est un langage complet, utilisé autant côté client (front-end, côté navigateur, avec des frameworks tels qu'[Angular](https://angular.io/) ou côté application mobile avec [Cordova](https://cordova.apache.org/)) que côté serveur comme nous l'avons mentionné plus haut.
 
-### Hello World !
+### Hello World!
 
-Afin d'illustrer la notion d'API JavaScript, regardons l'exemple d'un "Hello World !" dans ce langage.  
+Afin d'illustrer la notion d'API JavaScript, regardons l'exemple d'un "Hello World!" dans ce langage. 
+La façon classique de faire un "Hello World!" en JavaScript est en utilsant un `alert` dans une balise `script` d'un document HTML :
+
+```html
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <script>
+    alert( 'Hello, world!' );
+  </script>
+
+</body>
+
+</html>
+```
+
+En lançant le document dans un navigateur, une popup nous indique "Hello, world!".
+
+Nous allons voir une autre approche. Nous allons modifier le DOM, en utilisant l'API JavaScript permettant de le manipuler. 
+
+```html
+<!DOCTYPE HTML>
+<html>
+
+<body>
+  
+  <div id="display"></div>
+
+  <script>
+    document.getElementById('display').innerHTML = 'Hello World!'
+  </script>
+
+</body>
+
+</html>
+```
+
+Ici, le "Hello World!" n'apparaitra pas dans une popup comme précedemment mais sur la page elle-même. Ici, grâce à l'API JavaScript permettant de manipuler le DOM, on accède à l'élément HTML ayant pour id "display", puis on déclare sa valeur interne (`innerHTML`).
 
 ## Les navigateurs disponibles sur mobiles
 
