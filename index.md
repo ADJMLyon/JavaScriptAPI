@@ -43,7 +43,7 @@ Ainsi, JavaScript est un langage complet, utilisé autant côté client (front-e
 
 ### Hello World!
 
-Afin d'illustrer la notion d'API JavaScript, regardons l'exemple d'un "Hello World!" dans ce langage. 
+Afin d'illustrer la notion d'API JavaScript, regardons l'exemple d'un "Hello World!" dans ce langage.
 La façon classique de faire un "Hello World!" en JavaScript est en utilsant un `alert` dans une balise `script` d'un document HTML :
 
 ```html
@@ -63,14 +63,14 @@ La façon classique de faire un "Hello World!" en JavaScript est en utilsant un 
 
 En lançant le document dans un navigateur, une popup nous indique "Hello, world!".
 
-Nous allons voir une autre approche. Nous allons modifier le DOM, en utilisant l'API JavaScript permettant de le manipuler. 
+Nous allons voir une autre approche. Nous allons modifier le DOM, en utilisant l'API JavaScript permettant de le manipuler.
 
 ```html
 <!DOCTYPE HTML>
 <html>
 
 <body>
-  
+
   <div id="display"></div>
 
   <script>
@@ -82,8 +82,14 @@ Nous allons voir une autre approche. Nous allons modifier le DOM, en utilisant l
 </html>
 ```
 
-Ici, le "Hello World!" n'apparaitra pas dans une popup comme précedemment mais sur la page elle-même. Ici, grâce à l'API JavaScript permettant de manipuler le DOM, on accède à l'élément HTML ayant pour id "display", puis on déclare sa valeur interne (`innerHTML`).
-
-## Les navigateurs disponibles sur mobiles
+Ici, le "Hello World!" n'apparaitra pas dans une popup comme précedemment mais sur la page elle-même. Ici, grâce à l'API JavaScript permettant de manipuler le DOM, on accède à l'élément HTML ayant pour `id` "display", puis on déclare sa valeur interne (`innerHTML`). Nous verrons plus tard que l'objet `document` sera encore utilisé et qu'il donne accès à d'autres API.
 
 ## Les APIs Javascript pour accéder au matériel
+
+Maintenant que nous avons succinctement présenté le langage JavaScript, faisons à présent un tour d'horizon des API JavaScript permettant d'accéder au matériel des dispositifs mobiles depuis un navigateur Web tel que Chrome Android, iOS Safari etc...
+
+#### L'API de géolocalisation
+
+##### Principe
+
+Cette API donne des informations à propos de la position de l’utilisateur.
