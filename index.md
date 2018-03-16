@@ -19,6 +19,19 @@ JavaScript, créé en 1995 par Brendan Eich, est le "langage du Web". Il s'agit 
 
 ### Un langage très populaire du fait de sa polyvalence
 
+<table border="0">
+  <tr>
+    <td>
+      <img src="img/popular-languages.jpg" style="width: 100px;">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Nombre de pull requests sur GitHub par langages en 2017
+    </td>
+  </tr>
+</table>
+
 ### Exemples
 
 ## Les navigateurs disponibles sur mobiles
