@@ -13,7 +13,7 @@ HTML5, dernière version majeure de HTML, est sorti en octobre 2014 avec de nomb
 
 Une API, ou Application Programming Interface, peut être définie comme étant une *façade* par laquelle un logiciel donne accès à son potentiel à d’autres logiciels. Cela peut être : donner accès à des données, à des logiciels, des processus etc...
 
-JavaScript, créé en 1995 par Brendan Eich, est le "langage du Web" (on dit d'ailleurs que "HTML5 = HTML5 + CSS3 + JS"). Il s'agit d'un langage de script orienté objet. Il est principalement utilisé dans le but d'améliorer l'ergonomie d'une page web et/ou d'une UI, de dynamiser une page Web, d'interagir avec le HTML. Le navigateur web prend en charge l'exécution de ces scripts. 
+JavaScript, créé en 1995 par Brendan Eich, est le "langage du Web" (on dit d'ailleurs que "HTML5 = HTML5 + CSS3 + JS"). Il s'agit d'un langage de script orienté objet. Il est principalement utilisé dans le but d'améliorer l'ergonomie d'une page web et/ou d'une UI, de dynamiser une page Web, d'interagir avec le HTML. Le navigateur web prend en charge l'exécution de ces scripts.
 
 ## Présentation de JavaScript
 
@@ -44,6 +44,31 @@ Ainsi, JavaScript est un langage complet, utilisé autant côté client (front-e
 ### Hello World !
 
 Afin d'illustrer la notion d'API JavaScript, regardons l'exemple d'un "Hello World !" dans ce langage.
+
+<div data-trusted="1" class="code-example" data-demo-height="100" data-highlight-block="7-9">
+   <div class="codebox code-example__codebox">
+      <div class="toolbar codebox__toolbar">
+         <div class="toolbar__tool">
+             <a href="#" title="show" data-action="run" class="toolbar__button toolbar__button_run"></a>
+         </div>
+         <div class="toolbar__tool">
+             <a href="#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+         </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers language-markup"><code class="language-markup">&lt;!DOCTYPE HTML&gt;
+          &lt;html&gt;
+          &lt;body&gt;
+          &lt;p&gt;Before the script...&lt;/p&gt;
+          &lt;script&gt;
+          alert( 'Hello, world!' );
+          &lt;/script&gt;
+          &lt;p&gt;...After the script.&lt;/p&gt;
+          &lt;/body&gt;
+          &lt;/html&gt;</code></pre>
+        </div>
+      </div>
+    </div>      
 
 ## Les navigateurs disponibles sur mobiles
 
