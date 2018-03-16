@@ -22,7 +22,7 @@ JavaScript, créé en 1995 par Brendan Eich, est le "langage du Web". Il s'agit 
 <table border="0">
   <tr>
     <td>
-      <img src="img/popular-languages.jpg" style="width: 100px;">
+      <img src="img/popular-languages.jpg" style="width: 500px;">
     </td>
   </tr>
   <tr>
