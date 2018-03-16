@@ -17,6 +17,8 @@ JavaScript, créé en 1995 par Brendan Eich, est le "langage du Web". Il s'agit 
 
 ## Présentation de JavaScript
 
+Afin de bien cerner les enjeux de la veille et du tour d'horizon sur les API JavaScript qui suivra, faisons une rapide présentation du langage concerné ici.
+
 ### Un langage très populaire du fait de sa polyvalence
 
 JavaScript est le langage le plus populaire au monde, comme le montre le graphique suivant :
@@ -35,6 +37,8 @@ JavaScript est le langage le plus populaire au monde, comme le montre le graphiq
 </table>
 
 En effet, le nombre de pull requests concernés par des scripts JavaScript est largement plus élévé que pour les autres langages en 2017.
+JavaScript est très populaire grâce au fait qu'il reste encore de nos jours le langage du Web, malgré l'émergence d'autres langages. De plus, sa popularité a été amplifiée grâce à la création de [node.js](https://nodejs.org/en/) permettant l'utilisation JavaScript côté serveur. La simplicité et la vitesse de node.js lui a permis d'être utilisé par bon nombre de start-up par exemple.
+Ainsi, JavaScript est un langage complet, utilisé autant côté client (front-end, côté navigateur, avec des frameworks tels qu'[Angular](https://angular.io/) ou côté applications mobiles avec [Cordova](https://cordova.apache.org/).
 
 ### Exemples
 
