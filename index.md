@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Tour d’horizon des APIs Javascript pour accéder au matériel depuis un navigateur sur dispositifs mobiles
 
 You can use the [editor on GitHub](https://github.com/ADJMLyon/JavaScriptAPI/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
