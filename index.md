@@ -114,7 +114,7 @@ L'API de géolocalisation est l'une des plus utilisées. Ainsi, de nombreux navi
 <table align="center" border="0">
   <tr>
     <td>
-      <img src="img/caniuse-geo.jpg" style="width: 700px;">
+      <a href="https://caniuse.com/#feat=geolocation"><img src="img/caniuse-geo.jpg" style="width: 700px;"></a>
     </td>
   </tr>
   <tr>
@@ -248,7 +248,7 @@ Il est possible d'accéder aux informations concernant les angles d’orientatio
 <table align="center" border="0">
   <tr>
     <td>
-      <img src="img/orient-alpha.jpg" style="width: 500px;">
+      <img src="img/orient-alpha.jpg" style="width: 550px;">
     </td>
   </tr>
   <tr>
@@ -263,7 +263,7 @@ L'angle *alpha* est la rotation suivant l'axe z. Il vaut 0° lorsque l'appareil 
 <table align="center" border="0">
   <tr>
     <td>
-      <img src="img/orient-beta.jpg" style="width: 500px;">
+      <img src="img/orient-beta.jpg" style="width: 550px;">
     </td>
   </tr>
   <tr>
@@ -278,7 +278,7 @@ L'angle *beta* est la rotation suivant l'axe x. Il vaut 0° lorsque le haut et l
 <table align="center" border="0">
   <tr>
     <td>
-      <img src="img/orient-gamma.jpg" style="width: 500px;">
+      <img src="img/orient-gamma.jpg" style="width: 550px;">
     </td>
   </tr>
   <tr>
