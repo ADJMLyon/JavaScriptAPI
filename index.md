@@ -23,7 +23,7 @@ Afin de bien cerner les enjeux de la veille et du tour d'horizon sur les API Jav
 
 JavaScript est le langage le plus populaire au monde, comme le montre le graphique suivant :
 
-<table align="center">
+<table align="center" border="0">
   <tr>
     <td>
       <img src="img/popular-languages.jpg" style="width: 500px;">
@@ -111,10 +111,10 @@ Le *callback* de `getCurrentPosition` permet d'accéder à la variable `position
 
 L'API de géolocalisation est l'une des plus utilisées. Ainsi, de nombreux navigateurs la supporte, comme nous pouvons le constater sur le *caniuse* suivant :
 
-<table align="center">
+<table align="center" border="0">
   <tr>
     <td>
-      <img src="img/caniuse-geo.jpg" style="width: 500px;">
+      <img src="img/caniuse-geo.jpg" style="width: 600px;">
     </td>
   </tr>
   <tr>
