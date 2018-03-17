@@ -212,3 +212,82 @@ Le code suivant permet d'utiliser l'API de géolocalisation puis d'afficher la p
   </body>
 </html>
 ```
+
+La ligne `<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>` permet d'utiliser l'API Google. Nous pouvons reconnaître le bloc utilisant l'API de géolocalisation :
+
+```html
+// Try HTML5 geolocation.
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var pos = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
+
+    infoWindow.setPosition(pos);
+    infoWindow.setContent('Location found.');
+    infoWindow.open(map);
+    map.setCenter(pos);
+  }, function() {
+    handleLocationError(true, infoWindow, map.getCenter());
+  });
+} else {
+  // Browser doesn't support Geolocation
+  handleLocationError(false, infoWindow, map.getCenter());
+}
+```
+
+Si le navigateur supporte l'API de géolocalisation, on envoie les coordonnées de l'utilisateur à `infoWindow`.
+
+#### L'API d'orientation et de mouvement
+
+##### Principe
+
+Il est possible d'accéder aux informations concernant les angles d’orientation du dispositif mobile grâce à l’évènement `deviceorientation`. Celui-ci permet de détecter les changements de valeurs de divers angles définis sur un smartphone. Il s'agit des angles *alpha*, *beta* et *gamma*. Il sont définis comme suit :
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <img src="img/orient-alpha.jpg" style="width: 700px;">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Illustration de l'angle <i>alpha</i> dans le répère de coordonnées d'un smartphone
+    </td>
+  </tr>
+</table>
+
+L'angle *alpha* est la rotation suivant l'axe z. Il vaut 0° lorsque l'appareil est dirigé vers le Nord, et augmente lorsque l'on tourne celui-ci dans le sens anti-horaire.
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <img src="img/orient-beta.jpg" style="width: 700px;">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Illustration de l'angle <i>beta</i> dans le répère de coordonnées d'un smartphone
+    </td>
+  </tr>
+</table>
+
+L'angle *beta* est la rotation suivant l'axe x. Il vaut 0° lorsque le haut et le bas de l'appareil sont à équidistance par rapport à la surface de la Terre, et augmente lorsque l'on incline le haut de celui-ci en direction du sol.
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <img src="img/orient-gamma.jpg" style="width: 700px;">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Illustration de l'angle <i>gamma</i> dans le répère de coordonnées d'un smartphone
+    </td>
+  </tr>
+</table>
+
+L'angle *beta* est la rotation suivant l'axe y. Il vaut 0° lorsque les côtés droite et gauche de l'appareil sont à équidistance par rapport à la surface de la Terre, et augmente lorsque l'on incline le côté droit de celui-ci en direction du sol.
+
+Cette API utilise le gyroscope et le compas de l'appareil.
