@@ -114,7 +114,7 @@ L'API de géolocalisation est l'une des plus utilisées. Ainsi, de nombreux navi
 <table align="center" border="0">
   <tr>
     <td>
-      <a href="https://caniuse.com/#feat=geolocation"><img src="img/caniuse-geo.jpg" style="width: 700px;"></a>
+      <a href="https://caniuse.com/#feat=geolocation" target="new"><img src="img/caniuse-geo.jpg" style="width: 700px;"></a>
     </td>
   </tr>
   <tr>
