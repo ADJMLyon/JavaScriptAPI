@@ -95,13 +95,13 @@ Maintenant que nous avons succinctement présenté le langage JavaScript, faison
 Cette API donne des informations à propos de la position de l’utilisateur. L'objet `document.geolocation` a une fonction `getCurrentPosition` permettant d'accéder aux données relatives à la position de l'utilisateur grâce au GPS du smartphone ou tablette. On accède ainsi au matériel du dispositif. Dans le cas de la géolocalisation, il est néanmoins possible d'avoir la position de l'utilisateur sans passer par le GPS : s'il est connecté en Wi-Fi, on peut accéder à la position du *hotspot*. Voici un exemple d'utilisation de la fonction `getCurrentPosition` :
 
 ```html
-// Get the location.
+// Récupérons la localisation.
 navigator.geolocation.getCurrentPosition(function(position) {
-    // Get the positioning coordinates.
+    // Récupérons les coordonnées associée à la localisation actuelle de l'utilisateur.
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
 
-    // Do something interesting...
+    // Une action intéressante ...
 });
 ```
 
@@ -114,7 +114,7 @@ L'API de géolocalisation est l'une des plus utilisées. Ainsi, de nombreux navi
 <table align="center" border="0">
   <tr>
     <td>
-      <img src="img/caniuse-geo.jpg" style="width: 600px;">
+      <img src="img/caniuse-geo.jpg" style="width: 700px;">
     </td>
   </tr>
   <tr>
@@ -123,3 +123,92 @@ L'API de géolocalisation est l'une des plus utilisées. Ainsi, de nombreux navi
     </td>
   </tr>
 </table>
+
+Nous pouvons alors constater la possibilité d'utiliser cette API sur toutes les versions de tous les navigateurs mobiles courants à l'exception d'Opera Mini. Notons néanmoins que s'il y a un `1` en haut à gauche d'une version, cela signifie que l'API ne peut être utilisée que sur des serveurs sécurisées en https.
+Il est toujours bon de vérifier l'existance de l'objet `document.geolocation` avant de l'utiliser :
+
+```html
+// Vérifions si le navigateur Web supporte l'API de géolocalisation.
+if (navigator.geolocation) {
+
+} else {
+  // Si ce n'est pas le cas, on informe l'utilisateur.
+  document.write('Your browser does not support GeoLocation');
+}
+```
+
+##### Exemple avec Google Maps
+
+Le code suivant permet d'utiliser l'API de géolocalisation puis d'afficher la position sur une carte Google Maps grâce à l'API fournie :
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 6
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+  </body>
+</html>
+```
