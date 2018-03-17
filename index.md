@@ -23,7 +23,7 @@ Afin de bien cerner les enjeux de la veille et du tour d'horizon sur les API Jav
 
 JavaScript est le langage le plus populaire au monde, comme le montre le graphique suivant :
 
-<table align="center" border="0">
+<table align="center">
   <tr>
     <td>
       <img src="img/popular-languages.jpg" style="width: 500px;">
@@ -92,4 +92,34 @@ Maintenant que nous avons succinctement présenté le langage JavaScript, faison
 
 ##### Principe
 
-Cette API donne des informations à propos de la position de l’utilisateur.
+Cette API donne des informations à propos de la position de l’utilisateur. L'objet `document.geolocation` a une fonction `getCurrentPosition` permettant d'accéder aux données relatives à la position de l'utilisateur grâce au GPS du smartphone ou tablette. On accède ainsi au matériel du dispositif. Dans le cas de la géolocalisation, il est néanmoins possible d'avoir la position de l'utilisateur sans passer par le GPS : s'il est connecté en Wi-Fi, on peut accéder à la position du *hotspot*. Voici un exemple d'utilisation de la fonction `getCurrentPosition` :
+
+```html
+// Get the location.
+navigator.geolocation.getCurrentPosition(function(position) {
+    // Get the positioning coordinates.
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+
+    // Do something interesting...
+});
+```
+
+Le *callback* de `getCurrentPosition` permet d'accéder à la variable `position`, qui est un objet contenant notamment les coordonnées récupérées.
+
+##### Compatibilité
+
+L'API de géolocalisation est l'une des plus utilisées. Ainsi, de nombreux navigateurs la supporte, comme nous pouvons le constater sur le *caniuse* suivant :
+
+<table align="center">
+  <tr>
+    <td>
+      <img src="img/caniuse-geo.jpg" style="width: 500px;">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Compatibilité de l'API de géolocalisation sur divers navigateurs mobiles
+    </td>
+  </tr>
+</table>
