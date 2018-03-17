@@ -348,6 +348,8 @@ L'objet `event` renvoie plusieurs propriétés comme par exemple ici `accelerati
 
 ##### Compatibilité
 
+L'API d'orientation et de mouvement n'est hélas pas totalement supporté par la plupart des navigateurs comme nous pouvons le voir sur le *caniuse* suivant :
+
 <table align="center" border="0">
   <tr>
     <td>
@@ -356,7 +358,9 @@ L'objet `event` renvoie plusieurs propriétés comme par exemple ici `accelerati
   </tr>
   <tr>
     <td align="center" bgcolor="EFEFEF">
-      Compatibilité de l'API de géolocalisation sur divers navigateurs mobiles
+      Compatibilité de l'API d'orientation et de mouvement sur divers navigateurs mobiles
     </td>
   </tr>
 </table>
+
+Nous constatons alors que
