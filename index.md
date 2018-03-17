@@ -243,7 +243,7 @@ Si le navigateur supporte l'API de géolocalisation, on envoie les coordonnées 
 
 ##### Principe
 
-Il est possible d'accéder aux informations concernant les angles d’orientation du dispositif mobile grâce à l’évènement `deviceorientation`. Celui-ci permet de détecter les changements de valeurs de divers angles définis sur un smartphone. Il s'agit des angles *alpha*, *beta* et *gamma*. Il sont définis comme suit :
+Il est possible d'accéder aux informations concernant les angles d’orientation du dispositif mobile par une API. Celle-ci permet de détecter les changements de valeurs de divers angles définis sur un smartphone. Il s'agit des angles *alpha*, *beta* et *gamma*. Il sont définis comme suit :
 
 <table align="center" border="0">
   <tr>
@@ -290,4 +290,73 @@ L'angle *beta* est la rotation suivant l'axe x. Il vaut 0° lorsque le haut et l
 
 L'angle *beta* est la rotation suivant l'axe y. Il vaut 0° lorsque les côtés droite et gauche de l'appareil sont à équidistance par rapport à la surface de la Terre, et augmente lorsque l'on incline le côté droit de celui-ci en direction du sol.
 
-Cette API utilise le gyroscope et le compas de l'appareil.
+Cette API utilise le gyroscope et le compas de l'appareil. L’évènement `deviceorientation` permet de récupérer les valeurs des angles, comme suit :
+
+```html
+// Vérfions si le navigateur supporte DeviceOrientationEvent.
+if (window.DeviceOrientationEvent) {
+  // Création d'un eventListener.
+  window.addEventListener('deviceorientation', function(event) {
+    // Récupération de l'angle gamma.
+    var tiltLR = event.gamma;
+
+    // Récupération de l'angle beta.
+    var titleFB = event.beta;
+
+    // Récupération de l'angle alpha.
+    var direction = event.alpha;
+  });
+}
+```
+
+Ici, on ajoute un eventListener à l'objet `window` permettant de détecter les changements sur l'évènement `deviceorientation`. Lorsque une valeur relative à cet évènement change, on peut accéder à ses informations via la fonction de callback. Celle-ci donne accès à une variable, ici `event`, par laquelle on peut accéder aux valeurs des angles *alpha*, *beta* et *gamma*.
+
+L'API de mouvement utilise l’accéléromètre de la machine, pour détecter les mouvements de celle-ci selon le répère X, Y, Z, défini comme suit :
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <img src="img/coord.jpg" style="width: 550px;">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Illustration du répère cartésien du smartphone
+    </td>
+  </tr>
+</table>
+
+ L’évènement `devicemotion` est utilisé pour récupérer les informations relatives à un changement dans les valeurs d'accélération suivant les axes du répère.
+
+ ```html
+if(window.DeviceMotionEvent) {
+  window.addEventListener("devicemotion", process, false);
+} else {
+  // Le navigateur ne supporte pas l'événement devicemotion
+}
+
+function process(event) {
+  var x = event.accelerationIncludingGravity.x;
+  var y = event.accelerationIncludingGravity.y;
+  var z = event.accelerationIncludingGravity.z;
+
+  // Faisons quelque chose de génial !
+}
+```
+
+L'objet `event` renvoie plusieurs propriétés comme par exemple ici `accelerationIncludingGravity` renvoyant la valeur de l'accélération brute, retournée par l'accéléromètre. Il y a aussi les propriétés `acceleration`, renvoyant l'accélération calculée par l'appareil en enlevant la gravité, ou encore `rotationRate`, renvoyant les taux de rotation de l'appareil suivant les trois axes.
+
+##### Compatibilité
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <a href="https://caniuse.com/#feat=deviceorientation" target="new"><img src="img/caniuse-orient.jpg" style="width: 700px;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Compatibilité de l'API de géolocalisation sur divers navigateurs mobiles
+    </td>
+  </tr>
+</table>
