@@ -446,6 +446,52 @@ L'API de vibration est totalement supportée sur la plupart des navigateurs mobi
   </tr>
 </table>
 
-Seuls les navigateurs iOS Safari, Opera Mini et IE (Internet Explorer) Mobile ne supporte pas cette API. Sur tous les autres navigateurs mobiles, il est possible d'utiliser l'API sans aucun problème.
+Seuls les navigateurs iOS Safari, Opera Mini et IE (Internet Explorer) Mobile ne supportent pas cette API. Sur tous les autres navigateurs mobiles, il est possible d'utiliser l'API sans aucun problème.
 
 ##### Exemples d'application
+
+Cette API est très utile pour lancer des alertes via cet effet non-sonore qu'est la vibration. Cela peut être particulièrement intéressant dans le cas d'une application de jeu vidéo ou encore dans le cas d'un streaming vidéo. On peut en effet imaginer regarder une vidéo sur un smartphone dans un navigateur mobile et lorsqu'une explosion se produit dans la vidéo, l'effet de vibration pourrait se lancer.
+
+Il est possible d'envoyer des messages en Morse grâce à cette API :
+
+```html
+navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100]); // Vibrate 'SOS' in Morse
+```
+
+#### L'API Battery Status
+
+##### Principe
+
+L'API Battery Status, souvent mentionnée sous le nom *Battery API*, permet de récupérer des informations sur le niveau de charge d'un dispositif mobile. L'objet `BatteryManager` offre des informations sur le niveau de charge actuel, si la batterie est en train de charger ou pas, etc... On peut accéder à cet objet via `navigator.battery`.
+
+```html
+// Niveau de batterie actuel.
+navigator.battery.level;
+
+// Statut de charge (boolean), si la batterie est en train de charger ou pas.
+navigator.battery.charging;
+
+// Temps avant la recharge totale de la batterie.
+navigator.battery.chargingTime;
+
+// Temps avant la décharge totale de la batterie.
+navigator.battery.dischargingTime;
+```
+
+De plus, l'objet `BatteryManager` donne aussi accès à des évènements permettant de suivre l'évolution de la batterie.
+
+```html
+var battery = navigator.battery || navigator.mozBattery || navigator.webkitBattery; //suivant le navigateur les noms peuvent être différents.
+
+function updateBatteryStatus() {
+  console.log("Batterie chargée à : " + battery.level * 100 + " %");
+
+  if (battery.charging) {
+    console.log("Chargement de la batterie");
+  }
+}
+
+battery.addEventListener("chargingchange", updateBatteryStatus);
+battery.addEventListener("levelchange", updateBatteryStatus);
+updateBatteryStatus();
+```
