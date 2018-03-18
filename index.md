@@ -524,7 +524,7 @@ Il n'y a ici par énormément d'application directe de cette API, si ce n'est de
 <table align="center" border="0">
   <tr>
     <td>
-      <a href="http://pazguille.github.io/demo-battery-api/" target="new"><img src="img/caniuse-vibration.jpg" style="width: 700px;"></a>
+      <a href="http://pazguille.github.io/demo-battery-api/" target="new"><img src="img/battery-example.jpg" style="width: 700px;"></a>
     </td>
   </tr>
   <tr>
@@ -548,4 +548,4 @@ window.onload = function () {
   };
   ```
 
-  D'autres exemples similaires peuvent être trouvés, comme par exemple ce [codepen](https://codepen.io/matt-west/pen/vIwra)
+  D'autres exemples similaires peuvent être trouvés, comme par exemple ce [codepen](https://codepen.io/matt-west/pen/vIwra).
