@@ -364,3 +364,69 @@ L'API d'orientation et de mouvement n'est hélas pas totalement supporté par la
 </table>
 
 Nous constatons alors que pour la quasi-totalité des navigateurs cette API est *partiellement* supportée. Cela veut dire qu'il subsiste des difficultés dans certains cas. Ici, le support partiel est dû à un manque par rapport à l'évènement `compassneedscalibration`, qui est l'un des trois évènements de `DeviceMotionEvent` avec `devicemotion` et `deviceorientation` que nous avons vu précedemment. Ainsi, nous pouvons considérer que cette API est bien supportée pour presque tous les navigateurs.
+
+##### Exemples d'applications
+
+De nombreuses applications sont possibles grâce à cette API. En lien avec l'API de géolocalisation, il est possible d'utiliser l'API d'orientation et de mouvement afin de connaître la direction de l'utilisateur ou encore sa vitesse. Cette API peut être utilisée pour mettre à jour des données, lancer des actions suivant le mouvement fait par l'utilisateur avec son smartphone par exemple. Le `devicemotion` est utile aussi pour des utilisations liée à des applications de santé ou de fitness. Elle est aussi utilisable dans le cadre de petits jeux videos. Un exemple d'une telle application est détaillée sur ce [lien](https://developer.mozilla.org/en-US/Apps/Fundamentals/gather_and_modify_data/responding_to_device_orientation_changes). Il s'agit du jeu du *rolling-ball*. En faisant bouger l'appareil, la balle bouge; l'objectif étant de la placer dans le trou.
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <a href="https://developer.mozilla.org/en-US/Apps/Fundamentals/gather_and_modify_data/responding_to_device_orientation_changes" target="new"><img src="img/rolling-ball.png" style="width: 700px;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Compatibilité de l'API d'orientation et de mouvement sur divers navigateurs mobiles
+    </td>
+  </tr>
+</table>
+
+#### L'API de vibration
+
+##### Principe
+
+L'API de vibration permet, comme son nom l'indique, de faire vibrer la machine, d’envoyer un signal non sonore à un utilisateur. L'objet `navigator` possède une fonction `vibrate` permettant de faire vibrer la machine suivant les arguments passés à cette fonction.
+
+```html
+// Vibre une fois durant 1s (1000 ms).
+navigator.vibrate(1000);
+
+// Vibre "en séquence". Vibre pendant 3s, puis pause pendant 2s et enfin vibre à nouveau pendant 1s.
+navigator.vibrate([3000, 2000, 1000]);
+```
+
+Il possible d'arrêter une vibration en cours via ces deux méthodes :
+
+```html
+navigator.vibrate(0);
+navigator.vibrate([]);
+```
+
+Il possible d'effectuer des vibrations en continu grâce à l'utilisation de `setInterval`.
+
+```html
+var vibrateInterval;
+
+// Starts vibration at passed in level
+function startVibrate(duration) {
+	navigator.vibrate(duration);
+}
+
+// Stops vibration
+function stopVibrate() {
+	// Clear interval and stop persistent vibrating
+	if(vibrateInterval) clearInterval(vibrateInterval);
+	navigator.vibrate(0);
+}
+
+// Start persistent vibration at given duration and interval
+// Assumes a number value is given
+function startPeristentVibrate(duration, interval) {
+	vibrateInterval = setInterval(function() {
+		startVibrate(duration);
+	}, interval);
+}
+```
+
+##### Compatibilité
