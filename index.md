@@ -495,3 +495,57 @@ battery.addEventListener("chargingchange", updateBatteryStatus);
 battery.addEventListener("levelchange", updateBatteryStatus);
 updateBatteryStatus();
 ```
+
+Nous avons ici deux évènements : un permettant de savoir si l'appareil a été mis en charge ou pas, via `chargingchange`, et l'autre permettant de détecter les changements de niveau de batterie, `levelchange`.
+
+##### Compatibilité
+
+L'API Battery Status est totalement supportée par la plupart des navigateurs mobiles :
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <a href="https://caniuse.com/#search=battery" target="new"><img src="img/caniuse-vibration.jpg" style="width: 700px;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Compatibilité de l'API  Battery Status sur divers navigateurs mobiles
+    </td>
+  </tr>
+</table>
+
+Les navigateurs ne supportant pas l'API de vibration ne supportent pas non plus l'API Battery Status. Il existe une différence néanmoins : ici le navigateur BlackBerry ne supporte pas cette API. Pour les autres, il est possible de l'utiliser sans aucun problème.
+
+##### Exemple d'application
+
+Il n'y a ici par énormément d'application directe de cette API, si ce n'est de mettre au point des interfaces permettant de visualiser les informations relatives à la batterie.
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <a href="http://pazguille.github.io/demo-battery-api/" target="new"><img src="img/caniuse-vibration.jpg" style="width: 700px;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Compatibilité de l'API  Battery Status sur divers navigateurs mobiles
+    </td>
+  </tr>
+</table>
+
+Nous pouvons trouver le code source sur le GitHub suivant : [Battery Status API Demo](https://github.com/pazguille/demo-battery-api). Si nous regardons le code dans `src/index.js`, nous pouvons voir l'utilisation des évènements décrits plus haut :
+
+```html
+window.onload = function () {
+    battery.addEventListener('chargingchange', function() {
+      readBattery();
+    });
+
+    battery.addEventListener("levelchange", function() {
+      readBattery();
+    });
+  };
+  ```
+
+  D'autres exemples similaires peuvent être trouvés, comme par exemple ce [codepen](https://codepen.io/matt-west/pen/vIwra)
