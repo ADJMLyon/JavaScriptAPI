@@ -529,7 +529,7 @@ Il n'y a ici par énormément d'application directe de cette API, si ce n'est de
   </tr>
   <tr>
     <td align="center" bgcolor="EFEFEF">
-      Compatibilité de l'API  Battery Status sur divers navigateurs mobiles
+      Exemple d'interface utilisant l'API Battery Status
     </td>
   </tr>
 </table>
