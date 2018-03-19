@@ -538,14 +538,70 @@ Nous pouvons trouver le code source sur le GitHub suivant : [Battery Status API 
 
 ```html
 window.onload = function () {
-    battery.addEventListener('chargingchange', function() {
-      readBattery();
-    });
+  battery.addEventListener('chargingchange', function() {
+    readBattery();
+  });
 
-    battery.addEventListener("levelchange", function() {
-      readBattery();
-    });
-  };
-  ```
+  battery.addEventListener("levelchange", function() {
+    readBattery();
+  });
+};
+```
 
-  D'autres exemples similaires peuvent être trouvés, comme par exemple ce [codepen](https://codepen.io/matt-west/pen/vIwra).
+D'autres exemples similaires peuvent être trouvés, comme par exemple ce [codepen](https://codepen.io/matt-west/pen/vIwra).
+
+#### L'API de lumière ambiante
+
+##### Principe
+
+L'API de lumière ambiante permet d'accéder au capteur d'intensité lumineuse présent dans un appareil. Cette API permet le *switch* rapide entre le mode “jour” et le mode “nuit” suivant la lumière ambiante. L'événement `devicelight` permet d'accéder à ces informations.
+
+```html
+window.addEventListener('devicelight', function(event) {
+    // Get the ambient light level in lux.
+    var lightLevel = event.value;
+});
+```
+
+La fonction de callback permet ici de récupérer la valeur de l'intensité lumineuse, en lux.
+
+##### Compatibilité
+
+L'API de lumière ambiante n'est encore supportée que par Firefox Mobile pour le moment :
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <a href="https://caniuse.com/#search=ambient%20light" target="new"><img src="img/caniuse-light.jpg" style="width: 700px;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Exemple d'interface utilisant l'API Battery Status
+    </td>
+  </tr>
+</table>
+
+Comme nous pouvons le constater, cette API est très peu supportée par les navigateurs actuels. Microsoft est en train d'accélérer par rapport à cela et leurs navigateurs mobiles devraient bientôt la supporter.
+
+##### Exemple
+
+Voici un exemple simple où l'on passe du mode "nuit" au mode "jour" et inversement, selon la valeur de l'intensité lumineuse ambiante.
+
+```html
+window.addEventListener('devicelight', function(event) {
+  var html = document.getElementsByTagName('html')[0];
+
+  if (event.value < 50) {
+    html.classList.add('darklight');
+    html.classList.remove('brightlight');
+  } else {
+    html.classList.add('brightlight');
+    html.classList.remove('darklight');
+  }
+});
+```
+
+Si la valeur retournée par l'évènement `devicelight` est inférieur à 50, on passe en mode "nuit", sinon, on est en mode "jour".
+
+#### L'API d'évènements proches
