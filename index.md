@@ -510,7 +510,7 @@ L'API Battery Status est totalement supportée par la plupart des navigateurs mo
   </tr>
   <tr>
     <td align="center" bgcolor="EFEFEF">
-      Compatibilité de l'API  Battery Status sur divers navigateurs mobiles
+      Compatibilité de l'API Battery Status sur divers navigateurs mobiles
     </td>
   </tr>
 </table>
@@ -577,7 +577,7 @@ L'API de lumière ambiante n'est encore supportée que par Firefox Mobile pour l
   </tr>
   <tr>
     <td align="center" bgcolor="EFEFEF">
-      Exemple d'interface utilisant l'API Battery Status
+      Compatibilité de lumière ambiante sur divers navigateurs mobiles
     </td>
   </tr>
 </table>
