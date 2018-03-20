@@ -905,7 +905,7 @@ Vous pouvez tester le streaming en appuyant sur le bouton ci-dessous (la vidéo 
   </script>
 </body>
 
-En lançant le test un smartphone, nous pouvons visualiser le résultat :
+En lançant le test sur un smartphone, nous pouvons visualiser le résultat :
 
 <table align="center" border="0">
   <tr>
