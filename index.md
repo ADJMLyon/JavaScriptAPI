@@ -850,6 +850,9 @@ body {
   </tr>
 </table>
 
+Vous pouvez tester le streaming en appuyant sur le bouton ci-dessous :
+
+
 <head>
   <meta charset="utf-8">
   <title>HTML5 Demo: getUserMedia (Treehouse Blog)</title>
@@ -858,6 +861,7 @@ body {
 <body>  
   <div id="video-container">
     <video id="camera-stream" width="500" autoplay></video>
+    <button onclick="videoStream()">Test video stream !</button>
   </div>
   <script>
   var videoStream = function() {
@@ -893,7 +897,6 @@ body {
 
   }
   </script>
-  <button onclick="videoStream()">Test video stream !</button>
 </body>
 
 CSS3 donne accès à des filtres : nous pouvons ajouter cette ligne de code au fichier `style.css`.
@@ -906,7 +909,7 @@ CSS3 donne accès à des filtres : nous pouvons ajouter cette ligne de code au f
  D'autres filtres sont disponibles :
 
  ```html
- -webkit-filter: blur(3px);
+-webkit-filter: blur(3px);
 -webkit-filter: grayscale(1);
 -webkit-filter: sepia(1);
 -webkit-filter: brightness(2.5);
