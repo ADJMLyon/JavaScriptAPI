@@ -910,7 +910,7 @@ En lançant le test sur un smartphone, nous pouvons visualiser le résultat :
 <table align="center" border="0">
   <tr>
     <td>
-      <img src="img/example-video-stream-smartphone.jpg" style="width: 200px;">
+      <img src="img/example-video-stream-smartphone.jpg" style="width: 300px;">
     </td>
   </tr>
   <tr>
