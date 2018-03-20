@@ -1,14 +1,16 @@
-# Table of Contents
+# Table des matières
 1. [Introduction](#introduction)
    1. [Objectifs de la veille technologique](#objectifs-de-la-veille-technologique)
+   1. [Cadre de la veille technologique](#cadre-de-la-veille-technologique)
+1. [Présentation de JavaScript](#présentation-de-javascript)
 
 # Introduction
 
-### Objectifs de la veille technologique
+## Objectifs de la veille technologique
 
 L'objectif de ce document est mettre en lumière les diverses API Javascript permettant d'accéder au matériel depuis un navigateur sur des dispositifs mobiles comme les smartphones ou tablettes, de prendre conscience de leur potentiel et de les illustrer par des exemples d'applications.
 
-### Cadre de la veille technologique
+## Cadre de la veille technologique
 
 HTML5, dernière version majeure de HTML, est sorti en octobre 2014 avec de nombreuses nouvelles API. Comme nouveautés, nous pouvons lister entre autre :
 * une API de dessin 2D utilisée avec la nouvelle balise `canvas`,
@@ -19,7 +21,7 @@ Une API, ou Application Programming Interface, peut être définie comme étant 
 
 JavaScript, créé en 1995 par Brendan Eich, est le "langage du Web" (on dit d'ailleurs que "HTML5 = HTML5 + CSS3 + JS"). Il s'agit d'un langage de script orienté objet. Il est principalement utilisé dans le but d'améliorer l'ergonomie d'une page web et/ou d'une UI, de dynamiser une page Web, d'interagir avec le HTML. Le navigateur web prend en charge l'exécution de ces scripts.
 
-## Présentation de JavaScript
+# Présentation de JavaScript
 
 Afin de bien cerner les enjeux de la veille et du tour d'horizon sur les API JavaScript qui suivra, faisons une rapide présentation du langage concerné ici.
 
