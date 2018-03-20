@@ -861,8 +861,8 @@ Vous pouvez tester le streaming en appuyant sur le bouton ci-dessous :
 <body>  
   <div id="video-container">
     <video id="camera-stream" width="500" autoplay></video>
-    <button onclick="videoStream()">Test video stream !</button>
   </div>
+  <button onclick="videoStream()">Test video stream !</button>
   <script>
   var videoStream = function() {
 
