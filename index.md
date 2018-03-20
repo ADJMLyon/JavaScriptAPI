@@ -871,7 +871,7 @@ CSS3 donne accès à des filtres : nous pouvons ajouter cette ligne de code au f
 -webkit-filter: opacity(0.3);
 ```
 
-Vous pouvez tester le streaming en appuyant sur le bouton ci-dessous (la vidéo aura le filtre sépia):
+Vous pouvez tester le streaming en appuyant sur le bouton ci-dessous (la vidéo aura le filtre sépia). Attention, il faut donner l'autorisation au navigateur d'utiliser la caméra.
 
 <head>
   <meta charset="utf-8">
