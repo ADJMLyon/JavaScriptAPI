@@ -5,15 +5,15 @@
 1. [Présentation de JavaScript](#présentation-de-javascript)
    1. [Un langage très populaire du fait de sa polyvalence](#un-langage-très-populaire)
    1. [Hello World!](#hello-world)
-1. [Les APIs Javascript pour accéder au matériel](#les-apis-javascript-pour-accéder-au-matériel)
-   1. [L'API de géolocalisation](#l-api-de-géolocalisation)
-   1. [L'API d'orientation et de mouvement](#l-api-d-orientation-et-de-mouvement)
+1. [Les API Javascript pour accéder au matériel](#les-apis-javascript-pour-accéder-au-matériel)
+   1. [L'API de géolocalisation](#api-de-géolocalisation)
+   1. [L'API d'orientation et de mouvement](#api-d-orientation-et-de-mouvement)
 
 # Introduction
 
 ## Objectifs de la veille technologique
 
-L'objectif de ce document est mettre en lumière les diverses API Javascript permettant d'accéder au matériel depuis un navigateur sur des dispositifs mobiles comme les smartphones ou tablettes, de prendre conscience de leur potentiel et de les illustrer par des exemples d'applications.
+L'objectif de ce document est de mettre en lumière les diverses API Javascript permettant d'accéder au matériel depuis un navigateur sur des dispositifs mobiles comme les smartphones ou tablettes, de prendre conscience de leur potentiel et de les illustrer par des exemples d'applications.
 
 ## Cadre de la veille technologique
 
@@ -95,11 +95,11 @@ Nous allons voir une autre approche. Nous allons modifier le DOM, en utilisant l
 
 Ici, le "Hello World!" n'apparaitra pas dans une popup comme précedemment mais sur la page elle-même. Ici, grâce à l'API JavaScript permettant de manipuler le DOM, on accède à l'élément HTML ayant pour `id` "display", puis on déclare sa valeur interne (`innerHTML`). Nous verrons plus tard que l'objet `document` sera encore utilisé et qu'il donne accès à d'autres API.
 
-# Les APIs Javascript pour accéder au matériel
+# Les API Javascript pour accéder au matériel
 
 Maintenant que nous avons succinctement présenté le langage JavaScript, faisons à présent un tour d'horizon des API JavaScript permettant d'accéder au matériel des dispositifs mobiles depuis un navigateur Web tel que Chrome Android, iOS Safari etc...
 
-## L'API de géolocalisation
+## API de géolocalisation
 
 #### Principe
 
@@ -250,7 +250,7 @@ if (navigator.geolocation) {
 
 Si le navigateur supporte l'API de géolocalisation, on envoie les coordonnées de l'utilisateur à `infoWindow`.
 
-## L'API d'orientation et de mouvement
+## API d'orientation et de mouvement
 
 #### Principe
 
