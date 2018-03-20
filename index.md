@@ -840,7 +840,7 @@ body {
 <table align="center" border="0">
   <tr>
     <td>
-      <img src="img/example-video-streal.jpg" style="width: 600px;">
+      <img src="img/example-video-stream.jpg" style="width: 600px;">
     </td>
   </tr>
   <tr>
@@ -849,6 +849,47 @@ body {
     </td>
   </tr>
 </table>
+
+<body>
+  <button onclick="videoStream()">Test video stream !</button>
+  <div id="video-container">
+    <video id="camera-stream" width="500" autoplay></video>
+  </div>
+  <script>
+  var videoStream = function() {
+
+    // Normalize the various vendor prefixed versions of getUserMedia.
+    navigator.getUserMedia = (navigator.getUserMedia ||
+                              navigator.webkitGetUserMedia ||
+                              navigator.mozGetUserMedia ||
+                              navigator.msGetUserMedia);
+
+    if (navigator.getUserMedia) {
+      // Utilisation de la caméra.
+      navigator.getUserMedia(
+          // Le premier argument de la fonction est un objet avec les options voulues.
+          {
+              video: true
+          },
+          // Fonction de callback, si l'appel est un succès.
+          function(localMediaStream) {
+              var vid = document.getElementById('camera-stream');
+
+              // Création d'un objet URL pour le vidéo stream.
+              vid.src = window.URL.createObjectURL(localMediaStream);
+          },
+          // Fonction de callback d'erreur.
+          function(err) {
+              console.log('The following error occurred when trying to use getUserMedia: ' + err);
+          }
+      );
+    } else {
+      alert('Sorry, your browser does not support getUserMedia');
+    }
+
+  }
+  </script>
+</body>
 
 CSS3 donne accès à des filtres : nous pouvons ajouter cette ligne de code au fichier `style.css`.
 
