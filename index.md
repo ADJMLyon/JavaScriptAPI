@@ -741,4 +741,132 @@ if (navigator.getUserMedia) {
 }
 ```
 
+Comme pour toutes les API vues dans cette veille, il existe des préfixes différents pour les fonctions concernées. Par exemple, ici, il esrt recommandé d'ajouter le code suivant :
+
+```html
+window.onload = function() {
+
+  // Normalize the various vendor prefixed versions of getUserMedia.
+  navigator.getUserMedia = (navigator.getUserMedia ||
+                            navigator.webkitGetUserMedia ||
+                            navigator.mozGetUserMedia ||
+                            navigator.msGetUserMedia);
+
+}
+```
+
 #### Exemple
+
+Comme nous l'avons évoqué en introduction, HMTL5 ajoute les balises `video` et `audio`. Ici, nous allons utiliser la balise `video` pour visualiser un stream vidéo. Reprenons le script JavaScript que nous avons mis en place dans les parties précédentes :
+
+```html
+window.onload = function() {
+
+  // Normalize the various vendor prefixed versions of getUserMedia.
+  navigator.getUserMedia = (navigator.getUserMedia ||
+                            navigator.webkitGetUserMedia ||
+                            navigator.mozGetUserMedia ||
+                            navigator.msGetUserMedia);
+
+  if (navigator.getUserMedia) {
+    // Utilisation de la caméra.
+    navigator.getUserMedia(
+        // Le premier argument de la fonction est un objet avec les options voulues.
+        {
+            video: true
+        },
+        // Fonction de callback, si l'appel est un succès.
+        function(localMediaStream) {
+            var vid = document.getElementById('camera-stream');
+
+            // Création d'un objet URL pour le vidéo stream.
+            vid.src = window.URL.createObjectURL(localMediaStream);
+        },
+        // Fonction de callback d'erreur.
+        function(err) {
+            console.log('The following error occurred when trying to use getUserMedia: ' + err);
+        }
+    );
+  } else {
+    alert('Sorry, your browser does not support getUserMedia');
+  }
+
+}
+```
+
+Mettons ce script dans un fichier `script.js`, puis créons un fichier `index.html` avec le code suivant :
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HTML5 Demo: getUserMedia (Treehouse Blog)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="video-container">
+    <video id="camera-stream" width="500" autoplay></video>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+Puis créons un fichier pour le style CSS, `style.css` :
+
+```html
+body {
+  background: #F7F7F7;
+  margin: 0;
+  padding: 0;
+}
+
+#video-container {
+  margin: 2em auto 0;
+  width: 500px;
+  padding: 2em;
+  background: white;
+  -webkit-box-shadow: 0 1px 10px #D9D9D9;
+  -moz-box-shadow: 0 1px 10px #D9D9D9;
+  -ms-box-shadow: 0 1px 10px #D9D9D9;
+  -o-box-shadow: 0 1px 10px #D9D9D9;
+  box-shadow: 0 1px 10px #D9D9D9;
+}
+```
+
+`script.js` va se connecter à la caméra du device à l'ouverture de la page HTML. Et hop, j'apparaîs sur l'écran du navigateur !
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <img src="img/example-video-streal.jpg" style="width: 600px;">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Exemple d'utilisation de l'API de capture média
+    </td>
+  </tr>
+</table>
+
+CSS3 donne accès à des filtres : nous pouvons ajouter cette ligne de code au fichier `style.css`.
+
+```html
+#camera-stream {
+  -webkit-filter: sepia(1);
+}
+```
+ D'autres filtres sont disponibles :
+
+ ```html
+ -webkit-filter: blur(3px);
+-webkit-filter: grayscale(1);
+-webkit-filter: sepia(1);
+-webkit-filter: brightness(2.5);
+-webkit-filter: contrast(5);
+-webkit-filter: hue-rotate(125deg);
+-webkit-filter: invert(1);
+-webkit-filter: saturate(3);
+-webkit-filter: opacity(0.3);
+```
