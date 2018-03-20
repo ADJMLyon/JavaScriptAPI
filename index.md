@@ -6,7 +6,8 @@
    1. [Un langage très populaire du fait de sa polyvalence](#un-langage-très-populaire)
    1. [Hello World!](#hello-world)
 1. [Les APIs Javascript pour accéder au matériel](#les-apis-javascript-pour-accéder-au-matériel)
-   1. [L'API de géolocalisation](#l'api-de-géolocalisation)
+   1. [L'API de géolocalisation](#l-api-de-géolocalisation)
+   1. [L'API d'orientation et de mouvement](#l-api-d-orientation-et-de-mouvement)
 
 # Introduction
 
@@ -117,7 +118,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
 Le *callback* de `getCurrentPosition` permet d'accéder à la variable `position`, qui est un objet contenant notamment les coordonnées récupérées.
 
-##### Compatibilité
+#### Compatibilité
 
 L'API de géolocalisation est l'une des plus utilisées. Ainsi, de nombreux navigateurs la supporte, comme nous pouvons le constater sur le *caniuse* suivant :
 
@@ -147,7 +148,7 @@ if (navigator.geolocation) {
 }
 ```
 
-##### Exemple avec Google Maps
+#### Exemple avec Google Maps
 
 Le code suivant permet d'utiliser l'API de géolocalisation puis d'afficher la position sur une carte Google Maps grâce à l'API fournie :
 
@@ -249,9 +250,9 @@ if (navigator.geolocation) {
 
 Si le navigateur supporte l'API de géolocalisation, on envoie les coordonnées de l'utilisateur à `infoWindow`.
 
-#### L'API d'orientation et de mouvement
+## L'API d'orientation et de mouvement
 
-##### Principe
+#### Principe
 
 Il est possible d'accéder aux informations concernant les angles d’orientation du dispositif mobile par une API. Celle-ci permet de détecter les changements de valeurs de divers angles définis sur un smartphone. Il s'agit des angles *alpha*, *beta* et *gamma*. Il sont définis comme suit :
 
