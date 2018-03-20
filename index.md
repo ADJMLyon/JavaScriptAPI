@@ -850,8 +850,28 @@ body {
   </tr>
 </table>
 
-Vous pouvez tester le streaming en appuyant sur le bouton ci-dessous :
+CSS3 donne accès à des filtres : nous pouvons ajouter cette ligne de code au fichier `style.css`.
 
+```html
+#camera-stream {
+  -webkit-filter: sepia(1);
+}
+```
+ D'autres filtres sont disponibles :
+
+ ```html
+-webkit-filter: blur(3px);
+-webkit-filter: grayscale(1);
+-webkit-filter: sepia(1);
+-webkit-filter: brightness(2.5);
+-webkit-filter: contrast(5);
+-webkit-filter: hue-rotate(125deg);
+-webkit-filter: invert(1);
+-webkit-filter: saturate(3);
+-webkit-filter: opacity(0.3);
+```
+
+Vous pouvez tester le streaming en appuyant sur le bouton ci-dessous (la vidéo aura le filtre sépia):
 
 <head>
   <meta charset="utf-8">
@@ -898,24 +918,3 @@ Vous pouvez tester le streaming en appuyant sur le bouton ci-dessous :
   }
   </script>
 </body>
-
-CSS3 donne accès à des filtres : nous pouvons ajouter cette ligne de code au fichier `style.css`.
-
-```html
-#camera-stream {
-  -webkit-filter: sepia(1);
-}
-```
- D'autres filtres sont disponibles :
-
- ```html
--webkit-filter: blur(3px);
--webkit-filter: grayscale(1);
--webkit-filter: sepia(1);
--webkit-filter: brightness(2.5);
--webkit-filter: contrast(5);
--webkit-filter: hue-rotate(125deg);
--webkit-filter: invert(1);
--webkit-filter: saturate(3);
--webkit-filter: opacity(0.3);
-```
