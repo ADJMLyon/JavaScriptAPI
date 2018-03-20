@@ -7,11 +7,11 @@
    1. [Hello World!](#hello-world)
 1. [Les API Javascript pour accéder au matériel](#les-api-javascript-pour-accéder-au-matériel)
    1. [API de géolocalisation](#api-de-géolocalisation)
-   1. [API d'orientation et de mouvement](#api-d-orientation-et-de-mouvement)
+   1. [API d'orientation et de mouvement](#api-d'orientation-et-de-mouvement)
    1. [API de vibration](#api-de-vibration)
    1. [API Battery Status](#api-battery-status)
    1. [API de lumière ambiante](#api-de-lumière-ambiante)
-   1. [API d'évènements de proximité](#api-d-évènements-de-proximité)
+   1. [API d'évènements de proximité](#api-d'évènements-de-proximité)
    1. [API de capture média](#api-de-capture-média)
 
 # Introduction
