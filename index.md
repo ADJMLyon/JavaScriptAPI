@@ -850,6 +850,11 @@ body {
   </tr>
 </table>
 
+<head>
+  <meta charset="utf-8">
+  <title>HTML5 Demo: getUserMedia (Treehouse Blog)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
   <button onclick="videoStream()">Test video stream !</button>
   <div id="video-container">
