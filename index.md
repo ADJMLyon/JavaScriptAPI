@@ -835,20 +835,7 @@ body {
 }
 ```
 
-`script.js` va se connecter à la caméra du device à l'ouverture de la page HTML. Et hop, j'apparaîs sur l'écran du navigateur !
-
-<table align="center" border="0">
-  <tr>
-    <td>
-      <img src="img/example-video-stream.jpg" style="width: 600px;">
-    </td>
-  </tr>
-  <tr>
-    <td align="center" bgcolor="EFEFEF">
-      Exemple d'utilisation de l'API de capture média
-    </td>
-  </tr>
-</table>
+`script.js` va se connecter à la caméra du device à l'ouverture de la page HTML.
 
 CSS3 donne accès à des filtres : nous pouvons ajouter cette ligne de code au fichier `style.css`.
 
@@ -917,3 +904,18 @@ Vous pouvez tester le streaming en appuyant sur le bouton ci-dessous (la vidéo 
   }
   </script>
 </body>
+
+En lançant le test un smartphone, nous pouvons visualiser le résultat :
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <img src="img/example-video-stream.jpg" style="width: 600px;">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Exemple d'utilisation de l'API de capture média
+    </td>
+  </tr>
+</table>
