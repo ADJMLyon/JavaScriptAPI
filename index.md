@@ -5,9 +5,14 @@
 1. [Présentation de JavaScript](#présentation-de-javascript)
    1. [Un langage très populaire du fait de sa polyvalence](#un-langage-très-populaire)
    1. [Hello World!](#hello-world)
-1. [Les API Javascript pour accéder au matériel](#les-apis-javascript-pour-accéder-au-matériel)
-   1. [L'API de géolocalisation](#api-de-géolocalisation)
-   1. [L'API d'orientation et de mouvement](#api-d-orientation-et-de-mouvement)
+1. [Les API Javascript pour accéder au matériel](#les-api-javascript-pour-accéder-au-matériel)
+   1. [API de géolocalisation](#api-de-géolocalisation)
+   1. [API d'orientation et de mouvement](#api-d-orientation-et-de-mouvement)
+   1. [API de vibration](#api-de-vibration)
+   1. [API Battery Status](#api-battery-status)
+   1. [API de lumière ambiante](#api-de-lumière-ambiante)
+   1. [API d'évènements de proximité](#api-d-évènements-de-proximité)
+   1. [API de capture média](#api-de-capture-média)
 
 # Introduction
 
@@ -357,7 +362,7 @@ function process(event) {
 
 L'objet `event` renvoie plusieurs propriétés comme par exemple ici `accelerationIncludingGravity` renvoyant la valeur de l'accélération brute, retournée par l'accéléromètre. Il y a aussi les propriétés `acceleration`, renvoyant l'accélération calculée par l'appareil en enlevant la gravité, ou encore `rotationRate`, renvoyant les taux de rotation de l'appareil suivant les trois axes.
 
-##### Compatibilité
+#### Compatibilité
 
 L'API d'orientation et de mouvement n'est hélas pas totalement supporté par la plupart des navigateurs comme nous pouvons le voir sur le *caniuse* suivant :
 
@@ -376,7 +381,7 @@ L'API d'orientation et de mouvement n'est hélas pas totalement supporté par la
 
 Nous constatons alors que pour la quasi-totalité des navigateurs cette API est *partiellement* supportée. Cela veut dire qu'il subsiste des difficultés dans certains cas. Ici, le support partiel est dû à un manque par rapport à l'évènement `compassneedscalibration`, qui est l'un des trois évènements de `DeviceMotionEvent` avec `devicemotion` et `deviceorientation` que nous avons vu précedemment. Ainsi, nous pouvons considérer que cette API est bien supportée pour presque tous les navigateurs.
 
-##### Exemples d'application
+#### Exemples d'application
 
 De nombreuses applications sont possibles grâce à cette API. En lien avec l'API de géolocalisation, il est possible d'utiliser l'API d'orientation et de mouvement afin de connaître la direction de l'utilisateur ou encore sa vitesse. Cette API peut être utilisée pour mettre à jour des données, lancer des actions suivant le mouvement fait par l'utilisateur avec son smartphone par exemple. Le `devicemotion` est utile aussi pour des utilisations liée à des applications de santé ou de fitness. Elle est aussi utilisable dans le cadre de petits jeux videos. Un exemple d'une telle application est détaillée sur ce [lien](https://developer.mozilla.org/en-US/Apps/Fundamentals/gather_and_modify_data/responding_to_device_orientation_changes). Il s'agit du jeu du *rolling-ball*. En faisant bouger l'appareil, la balle bouge; l'objectif étant de la placer dans le trou.
 
@@ -393,9 +398,9 @@ De nombreuses applications sont possibles grâce à cette API. En lien avec l'AP
   </tr>
 </table>
 
-#### L'API de vibration
+## API de vibration
 
-##### Principe
+#### Principe
 
 L'API de vibration permet, comme son nom l'indique, de faire vibrer la machine, d’envoyer un signal non sonore à un utilisateur. L'objet `navigator` possède une fonction `vibrate` permettant de faire vibrer la machine suivant les arguments passés à cette fonction.
 
@@ -440,7 +445,7 @@ function startPeristentVibrate(duration, interval) {
 }
 ```
 
-##### Compatibilité
+#### Compatibilité
 
 L'API de vibration est totalement supportée sur la plupart des navigateurs mobiles :
 
@@ -459,7 +464,7 @@ L'API de vibration est totalement supportée sur la plupart des navigateurs mobi
 
 Seuls les navigateurs iOS Safari, Opera Mini et IE (Internet Explorer) Mobile ne supportent pas cette API. Sur tous les autres navigateurs mobiles, il est possible d'utiliser l'API sans aucun problème.
 
-##### Exemples d'application
+#### Exemples d'application
 
 Cette API est très utile pour lancer des alertes via cet effet non-sonore qu'est la vibration. Cela peut être particulièrement intéressant dans le cas d'une application de jeu vidéo ou encore dans le cas d'un streaming vidéo. On peut en effet imaginer regarder une vidéo sur un smartphone dans un navigateur mobile et lorsqu'une explosion se produit dans la vidéo, l'effet de vibration pourrait se lancer.
 
@@ -469,9 +474,9 @@ Il est possible d'envoyer des messages en Morse grâce à cette API :
 navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100]); // Vibrate 'SOS' in Morse
 ```
 
-#### L'API Battery Status
+## API Battery Status
 
-##### Principe
+#### Principe
 
 L'API Battery Status, souvent mentionnée sous le nom *Battery API*, permet de récupérer des informations sur le niveau de charge d'un dispositif mobile. L'objet `BatteryManager` offre des informations sur le niveau de charge actuel, si la batterie est en train de charger ou pas, etc... On peut accéder à cet objet via `navigator.battery`.
 
@@ -509,7 +514,7 @@ updateBatteryStatus();
 
 Nous avons ici deux évènements : un permettant de savoir si l'appareil a été mis en charge ou pas, via `chargingchange`, et l'autre permettant de détecter les changements de niveau de batterie, `levelchange`.
 
-##### Compatibilité
+#### Compatibilité
 
 L'API Battery Status est totalement supportée par la plupart des navigateurs mobiles :
 
@@ -528,7 +533,7 @@ L'API Battery Status est totalement supportée par la plupart des navigateurs mo
 
 Les navigateurs ne supportant pas l'API de vibration ne supportent pas non plus l'API Battery Status. Il existe une différence néanmoins : ici le navigateur BlackBerry ne supporte pas cette API. Pour les autres, il est possible de l'utiliser sans aucun problème.
 
-##### Exemple d'application
+#### Exemple d'application
 
 Il n'y a ici par énormément d'application directe de cette API, si ce n'est de mettre au point des interfaces permettant de visualiser les informations relatives à la batterie.
 
@@ -561,9 +566,9 @@ window.onload = function () {
 
 D'autres exemples similaires peuvent être trouvés, comme par exemple ce [codepen](https://codepen.io/matt-west/pen/vIwra).
 
-#### L'API de lumière ambiante
+## API de lumière ambiante
 
-##### Principe
+#### Principe
 
 L'API de lumière ambiante permet d'accéder au capteur d'intensité lumineuse présent dans un appareil. Cette API permet le *switch* rapide entre le mode “jour” et le mode “nuit” suivant la lumière ambiante. L'événement `devicelight` permet d'accéder à ces informations.
 
@@ -576,7 +581,7 @@ window.addEventListener('devicelight', function(event) {
 
 La fonction de callback permet ici de récupérer la valeur de l'intensité lumineuse, en lux.
 
-##### Compatibilité
+#### Compatibilité
 
 L'API de lumière ambiante n'est encore supportée que par Firefox Mobile pour le moment :
 
@@ -595,7 +600,7 @@ L'API de lumière ambiante n'est encore supportée que par Firefox Mobile pour l
 
 Comme nous pouvons le constater, cette API est très peu supportée par les navigateurs actuels. Microsoft est en train d'accélérer par rapport à cela et leurs navigateurs mobiles devraient bientôt la supporter.
 
-##### Exemple
+#### Exemple
 
 Voici un exemple simple où l'on passe du mode "nuit" au mode "jour" et inversement, selon la valeur de l'intensité lumineuse ambiante.
 
@@ -615,9 +620,9 @@ window.addEventListener('devicelight', function(event) {
 
 Si la valeur retournée par l'évènement `devicelight` est inférieur à 50, on passe en mode "nuit", sinon, on est en mode "jour".
 
-#### L'API d'évènements de proximité
+## API d'évènements de proximité
 
-##### Principe
+#### Principe
 
 L'API d'évènements de proximité utilie des capteurs de proximité, ceux-ci sont généralement disponibles sur les appareils mobile. Les événements de proximité permettent, par exemple, de savoir lorsqu'un utilisateur est près de l'appareil.
 Il existe deux types d'évènements de proximité : `DeviceProximityEvent` et `UserProximityEvent`. Le premier est le plus précis : il donne la distance entre un objet et le capteur de l'appareil. Le second est bien moins précis puisqu'il donne seulement un booléen `near`, nous indiquant si un user est proche ou non de l'appareil.
@@ -645,7 +650,7 @@ window.addEventListener('userproximity', function(event) {
 });
 ```
 
-##### Compatibilité
+#### Compatibilité
 
 Comme l'API de lumière ambiante, l'API d'évènements de proximité est encore en phase de développement sur la plupart des navigateurs. Seul Firefox la supporte pour le moment :
 
@@ -662,7 +667,7 @@ Comme l'API de lumière ambiante, l'API d'évènements de proximité est encore 
   </tr>
 </table>
 
-##### Exemple
+#### Exemple
 
 Une application simple de cette API est son utilisation au cours d'un appel téléphoniques : lorsqu'un utilisateur est en train de passer un appel téléphonique et que l'appareil est près de l'oreille, il est possible de l'utiliser pour éteindre l'écran.
 
@@ -678,9 +683,9 @@ window.addEventListener('userproximity', function(event) {
 });
 ```
 
-#### L'API de capture média
+## API de capture média
 
-##### Principe
+#### Principe
 
 L'API de capture média permet d’accéder à la caméra du mobile. La fonction `getUserMedia` permet de l’utiliser, et même de créer des streams vidéos.
 
@@ -707,7 +712,7 @@ navigator.getUserMedia(
 
 Dans la fonction de callback de succès, on peut accéder aux données renvoyées par la caméra via la variable `localMediaStream`.
 
-##### Compatibilité
+#### Compatibilité
 
 Compte tenu de la popularité de l'utilisation de la caméra des appareils mobiles, la plupart des navigateurs supporte cette API :
 
@@ -736,4 +741,4 @@ if (navigator.getUserMedia) {
 }
 ```
 
-##### Exemple
+#### Exemple
