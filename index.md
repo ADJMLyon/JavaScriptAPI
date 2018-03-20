@@ -5,7 +5,7 @@
 1. [Présentation de JavaScript](#présentation-de-javascript)
    1. [Un langage très populaire du fait de sa polyvalence](#un-langage-très-populaire)
    1. [Hello World!](#hello-world)
-1. [Les APIs Javascript pour accéder au matériel](#apis-javascript-pour-accéder-au-matériel)
+1. [Les APIs Javascript pour accéder au matériel](#les-apis-javascript-pour-accéder-au-matériel)
    1. [L'API de géolocalisation](#api-géo)
 
 # Introduction
