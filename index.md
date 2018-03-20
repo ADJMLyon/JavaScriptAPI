@@ -3,6 +3,10 @@
    1. [Objectifs de la veille technologique](#objectifs-de-la-veille-technologique)
    1. [Cadre de la veille technologique](#cadre-de-la-veille-technologique)
 1. [Présentation de JavaScript](#présentation-de-javascript)
+   1. [Un langage très populaire du fait de sa polyvalence](#un-langage-très-populaire)
+   1. [Hello World!](#hello-world)
+1. [Les APIs Javascript pour accéder au matériel](#apis-javascript-pour-accéder-au-matériel)
+   1. [L'API de géolocalisation](#api-géo)
 
 # Introduction
 
@@ -25,7 +29,7 @@ JavaScript, créé en 1995 par Brendan Eich, est le "langage du Web" (on dit d'a
 
 Afin de bien cerner les enjeux de la veille et du tour d'horizon sur les API JavaScript qui suivra, faisons une rapide présentation du langage concerné ici.
 
-### Un langage très populaire du fait de sa polyvalence
+## Un langage très populaire du fait de sa polyvalence
 
 JavaScript est le langage le plus populaire au monde, comme le montre le graphique suivant :
 
@@ -47,7 +51,7 @@ JavaScript est très populaire grâce au fait qu'il reste encore de nos jours le
 
 Ainsi, JavaScript est un langage complet, utilisé autant côté client (front-end, côté navigateur, avec des frameworks tels qu'[Angular](https://angular.io/) ou côté application mobile avec [Cordova](https://cordova.apache.org/)) que côté serveur comme nous l'avons mentionné plus haut.
 
-### Hello World!
+## Hello World!
 
 Afin d'illustrer la notion d'API JavaScript, regardons l'exemple d'un "Hello World!" dans ce langage.
 La façon classique de faire un "Hello World!" en JavaScript est en utilsant un `alert` dans une balise `script` d'un document HTML :
@@ -90,13 +94,13 @@ Nous allons voir une autre approche. Nous allons modifier le DOM, en utilisant l
 
 Ici, le "Hello World!" n'apparaitra pas dans une popup comme précedemment mais sur la page elle-même. Ici, grâce à l'API JavaScript permettant de manipuler le DOM, on accède à l'élément HTML ayant pour `id` "display", puis on déclare sa valeur interne (`innerHTML`). Nous verrons plus tard que l'objet `document` sera encore utilisé et qu'il donne accès à d'autres API.
 
-## Les APIs Javascript pour accéder au matériel
+# Les APIs Javascript pour accéder au matériel
 
 Maintenant que nous avons succinctement présenté le langage JavaScript, faisons à présent un tour d'horizon des API JavaScript permettant d'accéder au matériel des dispositifs mobiles depuis un navigateur Web tel que Chrome Android, iOS Safari etc...
 
-#### L'API de géolocalisation
+## L'API de géolocalisation
 
-##### Principe
+#### Principe
 
 Cette API donne des informations à propos de la position de l’utilisateur. L'objet `document.geolocation` a une fonction `getCurrentPosition` permettant d'accéder aux données relatives à la position de l'utilisateur grâce au GPS du smartphone ou tablette. On accède ainsi au matériel du dispositif. Dans le cas de la géolocalisation, il est néanmoins possible d'avoir la position de l'utilisateur sans passer par le GPS : s'il est connecté en Wi-Fi, on peut accéder à la position du *hotspot*. Voici un exemple d'utilisation de la fonction `getCurrentPosition` :
 
