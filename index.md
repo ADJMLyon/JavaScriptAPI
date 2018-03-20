@@ -855,8 +855,7 @@ body {
   <title>HTML5 Demo: getUserMedia (Treehouse Blog)</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <button onclick="videoStream()">Test video stream !</button>
+<body>  
   <div id="video-container">
     <video id="camera-stream" width="500" autoplay></video>
   </div>
@@ -894,6 +893,7 @@ body {
 
   }
   </script>
+  <button onclick="videoStream()">Test video stream !</button>
 </body>
 
 CSS3 donne accès à des filtres : nous pouvons ajouter cette ligne de code au fichier `style.css`.
