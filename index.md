@@ -577,7 +577,7 @@ L'API de lumière ambiante n'est encore supportée que par Firefox Mobile pour l
   </tr>
   <tr>
     <td align="center" bgcolor="EFEFEF">
-      Compatibilité de lumière ambiante sur divers navigateurs mobiles
+      Compatibilité de l'API de lumière ambiante sur divers navigateurs mobiles
     </td>
   </tr>
 </table>
@@ -604,4 +604,115 @@ window.addEventListener('devicelight', function(event) {
 
 Si la valeur retournée par l'évènement `devicelight` est inférieur à 50, on passe en mode "nuit", sinon, on est en mode "jour".
 
-#### L'API d'évènements proches
+#### L'API d'évènements de proximité
+
+##### Principe
+
+L'API d'évènements de proximité utilie des capteurs de proximité, ceux-ci sont généralement disponibles sur les appareils mobile. Les événements de proximité permettent, par exemple, de savoir lorsqu'un utilisateur est près de l'appareil.
+Il existe deux types d'évènements de proximité : `DeviceProximityEvent` et `UserProximityEvent`. Le premier est le plus précis : il donne la distance entre un objet et le capteur de l'appareil. Le second est bien moins précis puisqu'il donne seulement un booléen `near`, nous indiquant si un user est proche ou non de l'appareil.
+
+```html
+// DeviceProximityEvent
+window.addEventListener('deviceproximity', function(event) {
+    // La distance maximale couverte par le capteur (en cm).
+    var max = event.max;
+
+    // La distance minimale couverte par le capteur (en cm).
+    var min = event.min;
+
+    // La proximité de l'appareil.
+    var proximity = event.value;
+});
+
+// UserProximityEvent.
+window.addEventListener('userproximity', function(event) {
+    if (event.near) {
+        // Do something.
+    } else {
+        // Do something else.
+    }
+});
+```
+
+##### Compatibilité
+
+Comme l'API de lumière ambiante, l'API d'évènements de proximité est encore en phase de développement sur la plupart des navigateurs. Seul Firefox la supporte pour le moment :
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <a href="https://caniuse.com/#feat=proximity" target="new"><img src="img/caniuse-prox.jpg" style="width: 700px;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Compatibilité de l'API d'évènements de proximité sur divers navigateurs mobiles
+    </td>
+  </tr>
+</table>
+
+##### Exemple
+
+Une application simple de cette API est son utilisation au cours d'un appel téléphoniques : lorsqu'un utilisateur est en train de passer un appel téléphonique et que l'appareil est près de l'oreille, il est possible de l'utiliser pour éteindre l'écran.
+
+```html
+window.addEventListener('userproximity', function(event) {
+  if (event.near) {
+    // extinction de l'écran
+    navigator.mozPower.screenEnabled = false;
+  } else {
+    // allumage de l'écran
+    navigator.mozPower.screenEnabled = true;
+  }
+});
+```
+
+#### L'API de capture média
+
+##### Principe
+
+L'API de capture média permet d’accéder à la caméra du mobile. La fonction `getUserMedia` permet de l’utiliser, et même de créer des streams vidéos.
+
+```html
+// Utilisation de la caméra.
+navigator.getUserMedia(
+    // Le premier argument de la fonction est un objet avec les options voulues.
+    {
+        video: true
+    },
+    // Fonction de callback, si l'appel est un succès.
+    function(localMediaStream) {
+        var vid = document.getElementById('camera-stream');
+
+        // Création d'un objet URL pour le vidéo stream.
+        vid.src = window.URL.createObjectURL(localMediaStream);
+    },
+    // Fonction de callback d'erreur.
+    function(err) {
+        console.log('The following error occurred when trying to use getUserMedia: ' + err);
+    }
+);
+```
+
+Dans la fonction de callback de succès, on peut accéder aux données renvoyées par la caméra via la variable `localMediaStream`.
+
+##### Compatibilité
+
+Compte tenu de la popularité de l'utilisation de la caméra des appareils mobiles, la plupart des navigateurs supporte cette API :
+
+<table align="center" border="0">
+  <tr>
+    <td>
+      <a href="https://caniuse.com/#feat=stream" target="new"><img src="img/caniuse-media.jpg" style="width: 700px;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="EFEFEF">
+      Compatibilité de l'API de capture média sur divers navigateurs mobiles
+    </td>
+  </tr>
+</table>
+
+Notons le support partiel de cette API sur BlackBerry : cela est dû à une utilisation de l'ancienne spécification de l'API.
+
+##### Exemple
