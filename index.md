@@ -715,4 +715,14 @@ Compte tenu de la popularité de l'utilisation de la caméra des appareils mobil
 
 Notons le support partiel de cette API sur BlackBerry : cela est dû à une utilisation de l'ancienne spécification de l'API.
 
+Afin de vérifier le support d'un navigateur, ne pas oublier d'ajouter un test dans le code :
+
+```html
+if (navigator.getUserMedia) {
+  //Le code vu dans la partie "Principe"
+} else {
+  alert('Sorry, your browser does not support getUserMedia');
+}
+```
+
 ##### Exemple
