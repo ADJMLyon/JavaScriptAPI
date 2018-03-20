@@ -17,6 +17,8 @@ body {
   -webkit-filter: sepia(1);
 }
 button {
+  margin-top: inherit;
   position: relative;
   align: center;
+  margin-left: 400px;
 }

@@ -875,14 +875,13 @@ Vous pouvez tester le streaming en appuyant sur le bouton ci-dessous (la vidéo 
 
 <head>
   <meta charset="utf-8">
-  <title>HTML5 Demo: getUserMedia (Treehouse Blog)</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>  
   <div id="video-container">
     <video id="camera-stream" width="500" autoplay></video>
   </div>
-  <button onclick="videoStream()">Test video stream !</button>
+  <button onclick="videoStream()">Tester le vidéo stream !</button>
   <script>
   var videoStream = function() {
 
